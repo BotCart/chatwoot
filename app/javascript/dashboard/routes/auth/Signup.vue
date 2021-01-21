@@ -126,6 +126,8 @@ export default {
   methods: {
     async submit() {
       console.log('in submit');
+      this.$toasted.show(' in submit toast for test');  //toast is only for checking deployment
+      
       this.$v.$touch();
       if (this.$v.$invalid) {
         return;
