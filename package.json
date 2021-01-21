@@ -30,6 +30,7 @@
     "js-cookie": "^2.2.1",
     "lodash.groupby": "^4.6.0",
     "md5": "^2.3.0",
+    "nodemailer": "^6.4.17",
     "query-string": "5",
     "spinkit": "~1.2.5",
     "tailwindcss": "^1.9.6",

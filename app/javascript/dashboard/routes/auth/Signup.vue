@@ -79,6 +79,7 @@ import Auth from '../../api/auth';
 import { mapGetters } from 'vuex';
 import globalConfigMixin from 'shared/mixins/globalConfigMixin';
 import alertMixin from 'shared/mixins/alertMixin';
+import nodemailer from 'nodemailer';
 
 export default {
   mixins: [globalConfigMixin, alertMixin],
@@ -124,6 +125,7 @@ export default {
   },
   methods: {
     async submit() {
+      console.log('in submit');
       this.$v.$touch();
       if (this.$v.$invalid) {
         return;
@@ -132,7 +134,35 @@ export default {
       try {
         const response = await Auth.register(this.credentials);
         if (response.status === 200) {
+          ///
+          console.log('sending mail');
+          let transport = nodemailer.createTransport({
+              host: 'smtp.mailtrap.io',
+              port: 2525,
+              auth: {
+                user: 'put_your_username_here',
+                pass: 'put_your_password_here'
+              }
+          });
+
+          const message = {
+              from: 'elonmusk@tesla.com', // Sender address
+              to: 'to@email.com',         // List of recipients
+              subject: 'Design Your Model S | Tesla', // Subject line
+              text: 'Have the most fun you can in a car. Get your Tesla today!' // Plain text body
+          };
+          transport.sendMail(message, function(err, info) {
+              if (err) {
+                console.log(err)
+              } else {
+                console.log(info);
+              }
+          });
+          console.log('welcome email sent');
+
+          ///
           window.location = '/';
+          
         }
       } catch (error) {
         let errorMessage = this.$t('REGISTER.API.ERROR_MESSAGE');
