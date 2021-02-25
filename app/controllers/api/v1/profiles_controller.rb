@@ -9,6 +9,16 @@ class Api::V1::ProfilesController < Api::BaseController
     @user.update!(profile_params)
   end
 
+  def destroy
+    if params['email']&.downcase == @user.email.downcase
+      @user.destroy
+
+      head :no_content
+    end
+
+    head :unprocessable_entity
+  end
+
   private
 
   def set_user
