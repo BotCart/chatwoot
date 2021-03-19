@@ -9,7 +9,6 @@
 </template>
 
 <script>
-/* global bus */
 import WootSnackbar from './Snackbar';
 
 export default {
@@ -34,7 +33,7 @@ export default {
       this.snackMessages.push(message);
       window.setTimeout(() => {
         this.snackMessages.splice(0, 1);
-      }, this.duration);
+      }, Math.max(this.duration, 500 * message.split(' ').length));
     });
   },
 };

@@ -79,7 +79,7 @@
       "BUTTON_TEXT": "Edit",
       "CANCEL_BUTTON_TEXT": "Cancel",
       "API": {
-        "SUCCESS_MESSAGE": "Agent updated successfully",
+        "SUCCESS_MESSAGE": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan quam at nulla feugiat congue. Aenean ut risus ligula. Nunc malesuada risus at suscipit tincidunt. Ut fermentum ornare eros, id vestibulum ipsum facilisis eu. Phasellus sit amet arcu mi. Curabitur volutpat enim a turpis congue, sed interdum odio egestas. Suspendisse tempus nulla elit, in sollicitudin ipsum mattis non. Quisque in rutrum neque. Aliquam ornare bibendum nulla, ac vehicula eros bibendum eu. Quisque sollicitudin ex ac gravida facilisis. Aliquam faucibus est diam, vitae laoreet tortor rutrum quis. Phasellus imperdiet blandit ligula, sit amet suscipit nisi tempus ut. Phasellus id sodales risus. Vestibulum et elit nisl. Sed et urna cursus, ornare est ac, ultricies justo. Pellentesque id lorem quis nulla finibus",
         "ERROR_MESSAGE": "Could not connect to Woot Server, Please try again later"
       },
       "PASSWORD_RESET": {
